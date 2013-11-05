@@ -1,0 +1,47 @@
+/*
+-----------------------------------------------------------------------------
+ =Request Info Dropdown
+----------------------------------------------------------------------------- */
+#request-form {
+	background: #1B1A1B;
+	box-shadow: inset 0 8px 0 0 rgba(0,0,0,.5);
+	height: 0;
+	overflow: hidden;
+	}
+	.moo #request-form { height: 470px; }
+		#request-form .pc { 
+			float: none;
+			margin: 0 auto;
+			max-width: 1180px;
+			width: 100%;
+			}
+			
+/*form*/
+#request-form fieldset { 
+	border: 0;
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 50%;
+	}
+	#request-form fieldset legend,
+	#request-form fieldset label { display: none; } 
+	
+	#request-form fieldset input,
+	#request-form fieldset select {
+		background: rgba(255,255,255,.05);
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		border-radius: 0;
+		border: 0;
+		color: #555;
+		margin: 0 2% 2% 0;
+		outline: 0;
+		padding: .7em;
+		width: 98%;
+		}
+		
+	/*Submit Container*/
+	#request-form .submit { clear: both; }
+		/*Submit Button*/
+		#request-form .submit .submit { }

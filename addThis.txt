@@ -1,0 +1,30 @@
+/*
+-----------------------------------------------------------------------------
+ =Add This
+----------------------------------------------------------------------------- */
+.addthis_button { 
+	background: #eee;
+	border-radius: 3px;
+	display: block;
+	height: 30px;
+	width: 100px;
+	}
+	.addthis_button:before {
+		color: #dc6015;
+		content: '\f055    Share';
+		font-family: 'Font Awesome';
+		position: absolute;
+		top: 5px;
+		left: 5px;
+		}		
+	.addthis_button:after { 
+		content: '\f082    \f081    \f003';
+		font-family: 'Font Awesome';
+		position: absolute;
+		top: 5px;
+		right: 10px;
+		}
+		.addthis_button img { 
+			height: 100%;
+			opacity: 0; 
+			}

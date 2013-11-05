@@ -1,0 +1,76 @@
+<!--
+
+Slideshow Markup
+
+-->
+<ul class="slideshow">
+	<li><img src="http://fakeimg.pl/700x400/38eba8/"></li>
+    <li><img src="http://fakeimg.pl/700x400/99ad92/"></li>
+     <li><img src="http://fakeimg.pl/700x400/223132/"></li>
+</ul>
+<div class="pager"></div>
+
+
+/*-------------------------------------------------
+	Slideshow CSS
+-------------------------------------------------*/
+.slideshow { position: relative; }
+	.slideshow li { 
+		opacity: 0;
+		position: absolute; 
+		transition: 1s; 
+		width: 100%; 
+		}
+		.slideshow li.active { opacity: 1; }
+			.slideshow li img { max-width: 100%; }
+
+.pager { 
+	position: absolute;
+	top: 0;
+	width: 100%;
+	}			
+	.pager span {
+		background: #fff;
+		border-radius: 100%;
+		cursor: pointer;
+		float: left;
+		margin: 1%;
+		height: 20px;
+		width: 20px;
+		}
+		.pager span:hover { opacity: .6; }
+	
+	
+/*-------------------------------------------------
+	Slideshow JS
+-------------------------------------------------*/	
+	// Make that first sexy slide appear
+	$('.slideshow li:first').addClass('active');
+	
+	// Associate Pager elements with slides
+	var x = 0;
+	$('.slideshow li').each(function() {
+		x++;
+	  	$(this).addClass('slide' + x);
+	  	$('.pager').append($('<span/>', {
+				'class': 'slide' + x
+			}))
+	});
+	
+	// Action upon clicking a pager item
+	$('.pager span').click(function () {
+		var targetSlide = $(this).attr('class');
+		$('.slideshow li').removeClass('active');
+		$('.slideshow .' + targetSlide).addClass('active');
+	});
+	
+	// Let the slideshow begin!
+	var Slide = function(){
+		$('.slideshow li')
+	  		.removeClass('active')
+	   		.next().add('.slideshow li:first').last().addClass('active');
+	}
+	setInterval(Slide, 5000);
+	
+	
+

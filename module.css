@@ -1,0 +1,312 @@
+/* VERSIONS
+/* 1_0: General Module Styles
+/* 2_0: Module Framework
+/* 3_0: Shared Code - Setup for list / grid styles
+/* 3_1: Shared Images [Author: Nick Hall]
+/* 4_0: Clean up and remove infrastructure @import [Author: Nick Hall]
+----------------------------------------------------------------------------- */
+/* Example permutations
+	.module-grid-news
+	.module-list-news
+	.module-grid-calendar
+	.module-list-calendar
+*/
+
+/* Secretly request * { position: relative; }
+	.hd,
+	.bd,
+	.ft { position: relative; }
+*/
+
+/*
+-----------------------------------------------------------------------------
+ =Module Common
+----------------------------------------------------------------------------- */
+div[class*='module'] { margin: 0 0 1.8em; }
+	div[class*='module'] .inner {}
+		.hd {}
+			.hd h2 {}
+		.bd {}
+			.no-content {}
+			.readmore {}
+			.readmore:hover {}
+			.view-all {}
+			.view-all:hover {}
+		.ft {}
+
+.sc div[class^='module'],
+.tc div[class^='module'] {
+	background-color: #f5efe3;
+	padding: 10px;
+	}
+	.sc div[class^='module'] .inner,
+	.tc div[class^='module'] .inner {}
+		.sc .hd,
+		.tc .hd {}
+			.sc .hd h2,
+			.tc .hd h2 {}
+		.sc .bd,
+		.tc .bd {}
+			.sc .bd > *:last-child,
+			.sc .bd > *:last-child > *:last-child,
+			.sc .bd > *:last-child > *:last-child > *:last-child,
+			.tc .bd > *:last-child,
+			.tc .bd > *:last-child > *:last-child,
+			.tc .bd > *:last-child > *:last-child > *:last-child { margin-bottom: 0; }
+
+
+/*
+-----------------------------------------------------------------------------
+ =List Module
+----------------------------------------------------------------------------- */
+div[class*='list'] {}
+	div[class*='list'] .hd {}
+		div[class*='list'] .hd h2 {}
+	div[class*='list'] .bd {}
+		div[class*='list'] .bd > ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			list-style-image: none;
+			}
+			div[class*='list'] .bd > ul > li,
+			div[class*='list'] .bd dl {
+				margin: 0;
+				padding: 0;
+				background-image: none;
+				border-bottom: 1px solid #efefef;
+				margin-bottom: 1em;
+				padding-bottom: 1em;
+				}
+			div[class*='list'] .bd > dl > dt {}
+			div[class*='list'] .bd > ul > li:after,
+			div[class*='list'] .bd dl > dd:after {
+				content: ""; 
+				display: table;
+				clear: both;
+				}
+			div[class*='list'] .bd > ul > li.last-child,
+			div[class*='list'] .bd dl > dd.last-child {}
+				.sc div[class*='list'] .thumb,
+				.tc div[class*='list'] .thumb {
+					float: none!important;
+					width: 100%;
+					max-width: 100%;
+					margin: 0 0 .8em;
+					}
+					div[class*='list'] .thumb a {}
+
+
+/*
+-----------------------------------------------------------------------------
+ =Grid Module
+----------------------------------------------------------------------------- */
+div[class*='grid'] {}
+	div[class*='grid'] .hd {}
+		div[class*='grid'] .hd h2 {}
+	div[class*='grid'] .bd {}
+	div[class*='grid'] .bd:after {
+		content: "";
+		display: table;
+		clear: both;
+		}
+		div[class*='grid'] .bd > ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			list-style-image: none;
+			}
+		div[class*='grid'] .bd > ul:after { content: ""; display: table; clear: both; }
+			div[class*='grid'] .bd dl,
+			div[class*='grid'] .bd > ul > li {
+				display: inline;
+				float: left;
+				margin: 0 0 1.2em 0;
+				padding: 0 1%;
+				background-image: none;
+				position: relative;
+				zoom: 1;
+				width: 100%;
+				}
+				.sc div[class*='grid'] .bd dl,
+				.tc div[class*='grid'] .bd dl,
+				.sc div[class*='grid'] .bd > ul > li,
+				.tc div[class*='grid'] .bd > ul > li { padding: 0; }
+				.layout-n0-p1-s0 .pc div[class*='grid'] li,
+				.layout-n0-p1-s0 .pc div[class*='grid'] dd { width: 25%; }
+				.layout-n1-p1-s0 .pc div[class*='grid'] li,
+				.layout-n0-p1-s1 .pc div[class*='grid'] li,
+				.layout-n1-p1-s0 .pc div[class*='grid'] dd,
+				.layout-n0-p1-s1 .pc div[class*='grid'] dd { width: 33%; }
+				.layout-n1-p1-s1-top .pc div[class*='grid'] li,
+				.layout-n1-p1-s1 .pc div[class*='grid'] li,
+				.layout-n1-p1-s1-top .pc div[class*='grid'] dd,
+				.layout-n1-p1-s1 .pc div[class*='grid'] dd { width: 50%; }
+				.layout-n1-p1-s0-c .pc div[class*='grid'] li,
+				.layout-n1-p1-s0-c .pc div[class*='grid'] dd { width: 20%; }
+				.layout-n1-p1-s0-c .pc .sc div[class*='grid'] li,
+				.layout-n1-p1-s0-c .pc .sc div[class*='grid'] dd { width: 100%; }
+
+				.layout-n0-p1-s0 .pc div[class*='grid'] li:nth-child(4n+1),
+				.layout-n0-p1-s0 .pc div[class*='grid'] dd:nth-child(4n+1),
+				.layout-n1-p1-s0 .pc div[class*='grid'] li:nth-child(3n+1),
+				.layout-n1-p1-s0 .pc div[class*='grid'] dd:nth-child(3n+1),
+				.layout-n0-p1-s1 .pc div[class*='grid'] li:nth-child(3n+1),
+				.layout-n0-p1-s1 .pc div[class*='grid'] dd:nth-child(3n+1),
+				.layout-n1-p1-s0-c .pc div[class*='grid'] li:nth-child(3n+1),
+				.layout-n1-p1-s0-c .pc div[class*='grid'] dd:nth-child(3n+1),
+				.layout-n1-p1-s1-top .pc div[class*='grid'] li:nth-child(2n+1),
+				.layout-n1-p1-s1-top .pc div[class*='grid'] dd:nth-child(2n+1),
+				.layout-n1-p1-s1 .pc div[class*='grid'] li:nth-child(2n+1),
+				.layout-n1-p1-s1 .pc div[class*='grid'] dd:nth-child(2n+1) { padding-left: 0; }
+				.layout-n0-p1-s0 .pc div[class*='grid'] li:nth-child(4n+4),
+				.layout-n0-p1-s0 .pc div[class*='grid'] dd:nth-child(4n+4),
+				.layout-n1-p1-s0 .pc div[class*='grid'] li:nth-child(3n+3),
+				.layout-n1-p1-s0 .pc div[class*='grid'] dd:nth-child(3n+3),
+				.layout-n0-p1-s1 .pc div[class*='grid'] li:nth-child(3n+3),
+				.layout-n0-p1-s1 .pc div[class*='grid'] dd:nth-child(3n+3),
+				.layout-n1-p1-s0-c .pc div[class*='grid'] li:nth-child(3n+3),
+				.layout-n1-p1-s0-c .pc div[class*='grid'] dd:nth-child(3n+3),
+				.layout-n1-p1-s1-top .pc div[class*='grid'] li:nth-child(2n+2),
+				.layout-n1-p1-s1-top .pc div[class*='grid'] dd:nth-child(2n+2),
+				.layout-n1-p1-s1 .pc div[class*='grid'] li:nth-child(2n+2),
+				.layout-n1-p1-s1 .pc div[class*='grid'] dd:nth-child(2n+2) { padding-right: 0; }
+
+
+/*
+-----------------------------------------------------------------------------
+ =Search Module (News, Calendar, Directory Search Web Parts)
+----------------------------------------------------------------------------- */
+div[class*='search'] {}
+	div[class*='search'] .hd {}
+		div[class*='search'] .hd h2 {}
+	div[class*='search'] .bd {}
+		div[class*='search'] label { display: block; margin-bottom: .8em; }
+			div[class*='search'] label span {}
+				div[class*='search'] label input,
+				div[class*='search'] label textarea,
+				div[class*='search'] label select {
+					margin-top: .2em;
+					display: block;
+					width: 65%;
+					}
+				.sc div[class*='search'] label input,
+				.sc div[class*='search'] label textarea,
+				.sc div[class*='search'] label select,
+				.tc div[class*='search'] label input,
+				.tc div[class*='search'] label textarea,
+				.tc div[class*='search'] label select { width: 100%; }
+				div[class*='search'] label input {}
+				div[class*='search'] label input[type='text'] {}
+				div[class*='search'] label input[type='checkbox'] { display: inline; width: auto; }
+				div[class*='search'] label select {}
+					div[class*='search'] select option {}
+		div[class*='search'] .error {}
+			div[class*='search'] input[type='submit'] {}
+			div[class*='search'] .submit {}
+			div[class*='search'] .clear {}
+
+
+/*
+-----------------------------------------------------------------------------
+ =Paging
+----------------------------------------------------------------------------- */
+
+/* Next & Previous */
+.module .paging { position: relative; margin-bottom: 1em; }
+.module .paging:after {
+	content: "";
+	display: table;
+	clear: both;
+	}
+	.module .paging .previous { float: left; }
+	.module .paging .next { float: right; }
+
+/* Pagination */
+.module .paging > span {}
+	.module .paging > span > strong,
+	.module .paging > span > a {
+		border-radius: 0;
+		border-left-width: 0;
+		margin-bottom: 3px;
+		}
+	.module .paging > span > strong {
+		color: #666;
+		color: rgba(0, 0, 0, .6);
+		cursor: default;
+		}
+	.module .paging > span > strong:hover {
+		border-color: #b9b9b9;
+		-webkit-box-shadow: 0 0 0;
+		-moz-box-shadow: 0 0 0;
+		box-shadow: 0 0 0;
+		}
+	.module .paging > span > a {}
+	.module .paging > span > strong,
+	.module .paging > span > a:hover {}
+	.module .paging > span > :first-child { border-radius: 3px 0 0 3px; border-left-width: 1px; }
+	.module .paging > span > :last-child { border-radius: 0 3px 3px 0; }
+
+
+/*
+-----------------------------------------------------------------------------
+ =Detail Module
+----------------------------------------------------------------------------- */
+.detail {}
+	.detail .hd {}
+		.detail .hd h2 {}
+
+	.detail .bd {}
+		.detail .no-content {}
+		.detail h1 {}
+		.detail h2 {}
+		.detail h3 {}
+		.detail h4 {}
+		.detail h5 {}
+		.detail p {}
+		.detail .thumb {}
+			.detail .thumb {}
+				.detail .thumb a {}
+				.detail .thumb a:hover {}
+					.detail .thumb img {}
+		.detail .previous {}
+			.detail .previous a {}
+			.detail .previous a:hover {}
+
+
+/*
+-----------------------------------------------------------------------------
+ =Detail Page (news & calendars)
+----------------------------------------------------------------------------- */
+.google.plus-button.detail,
+.facebook.like-button.detail,
+.addthis.detail { margin-bottom: 1.8em; }
+.google.plus-button.detail,
+.facebook.like-button.detail { float: left; }
+
+
+/*
+-----------------------------------------------------------------------------
+ =Portal
+----------------------------------------------------------------------------- */
+.pc .module .hd select,
+.module .hd .customize,
+.module .hd .edit {
+	position: absolute;
+	right: 0;
+	top: 0;
+	}
+.module .sh { font-weight: bold; }
+.module .sh span.leftCol {}
+.module .sh span.rightCol {
+	position: absolute;
+	right: 0;
+	top: 0;
+	}
+
+
+/*
+-----------------------------------------------------------------------------
+ =Linked Legacy
+----------------------------------------------------------------------------- */
+.linked .module .list .thumb {} /* float left or right */

@@ -1,0 +1,24 @@
+<style type="text/css">
+	#cse .gsc-control-cse { 	
+		background: none;
+		border: 0;
+		padding: 0;
+		}	
+		/*Load Statistics*/
+		#cse .gsc-above-wrapper-area { 
+			border: 0;
+			padding: 0;
+			}
+			#cse .gsc-result-info { 
+				margin: 0;
+				padding: 0;
+				}
+					
+		/*Results*/
+		#cse .gsc-wrapper { }
+			#cse .gsc-webResult { border: 0; }
+				#cse .gs-image { }
+				#cse .gs-title * { color: #09C; }
+				#cse .gs-snippet { }
+				#cse .gs-visibleUrl { color: #aaa; }
+</style> 
